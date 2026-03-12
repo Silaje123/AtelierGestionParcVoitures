@@ -2,7 +2,7 @@ class voiture:
     def __init__(self, matricule, marque, couleur):
         self.matricule = matricule
         self.marque = marque
-        Self.couleur = couleur
+        self.couleur = couleur
 
     def afficherInformations(self):
         print("Matricule:" , self.matricule)
@@ -14,7 +14,7 @@ class Parc:
         self.id = id
         self.adresse = adresse
         self.capacite = capacite
-        self.listeVoitures = ()
+        self.listeVoitures = []
 
     def entrerVoiture(self, voiture):
 
@@ -24,7 +24,7 @@ class Parc:
                 return
 
             if len(self.listeVoitures) < self.capacite:
-                self.listeVoitures.apprend(voiture)
+                self.listeVoitures.append(voiture)
                 print("Voiture ajoutée au parc.")
             else:
                 print("Le parc est plein.")
@@ -43,7 +43,14 @@ class Parc:
     def calculerNombrePlacesLibres(self):
         return self.capacite - len(self.listeVoitures)
 
+    def afficherParc(self):
+        print("Voitures dans le parc :")
+        for v in self.listeVoitures:
+            v.afficherInformations()
+            print("-----")
+
 parc = Parc(1, "Montreal", 3)
+
 v1 = Voiture("A123", "Toyota" , "Rouge")
 v2 = Voiture("B456" , "Honda" , "Bleu")
 v3 = Voiture("C789" , "BMW" , "Noir")
@@ -60,3 +67,4 @@ parc.sortirVoiture(v2)
 parc.afficherParc()
 
 parc.afficherParc()
+
