@@ -56,3 +56,7 @@ parc.entrerVoiture(v3)
 parc.entrerVoiture(v4)
 
 parc.sortirVoiture(v2)
+
+parc.afficherParc()
+
+parc.afficherParc()
